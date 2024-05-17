@@ -3,22 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesion</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Registro</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e4bcbca4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: hsla(0, 70%, 75%, 0.493);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        .login-header {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .login-header img {
+            width: 40%;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid #ff00007a;
+            background-color: transparent;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder {
+            color: #3b0000;
+            opacity: 1;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-bottom: 2px solid #a808a8;
+            color: #000000;
+        }
+
+        button {
+            background-color: #a51b1b;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5f0707;
+        }
+
+    </style>
 </head>
 <body>
     <div class="login-container">
         <div class="login-header">
             <img src="https://sociedadtecnologiaydeontologia.files.wordpress.com/2019/01/logotipo_ipn.png?w=640" alt="Logo de la Institución">
         </div>
-        <form class="login-form" method="POST" action="/register">
+        <form class="login-form" action="/register" method="POST">
             <div class="input-group">
-                <input type="text" id="username" name="name" placeholder="Usuario" required>
+                <input type="text" id="name" name="name" placeholder="Usuario" required>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
             </div>
             <div class="input-group">
                 <input type="password" id="password" name="password" placeholder="Contraseña" required>
             </div>
-            <button type="submit">Iniciar Sesión</button>
+            <button type="submit">Registrarse</button>
         </form>
     </div>
 </body>

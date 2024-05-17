@@ -35,7 +35,7 @@ body {
     margin-bottom: 20px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type = "email"] {
     width: 100%;
     padding: 10px;
     border: none;
@@ -44,7 +44,7 @@ input[type="text"], input[type="password"] {
     box-sizing: border-box;
 }
 
-input[type="text"]::placeholder, input[type="password"]::placeholder {
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder {
     color: #3b0000;
     opacity: 1;
 }
