@@ -14,7 +14,8 @@
     "dotenv": "^16.4.5",
     "env": "^0.0.2",
     "express": "^4.19.2",
-    "express-handlebars": "^7.1.2"
+    "express-handlebars": "^7.1.2",
+    "mongodb": "^6.6.2",
+    "moongose": "^1.0.0"
   }
 }
-
