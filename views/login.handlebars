@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="https://sociedadtecnologiaydeontologia.files.wordpress.com/2019/01/logotipo_ipn.png?w=640" alt="Logo de la Institución">
+        </div>
+        <form class="login-form" method="POST" action="/login">
+            <div class="input-group">
+                <input type="text" id="username" name="name" placeholder="Usuario" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>
