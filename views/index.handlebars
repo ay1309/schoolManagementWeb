@@ -1,12 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
+    <title>Sistema de Administración Escolar</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e4bcbca4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: #b92c46d3;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            padding-left: 20px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-links, .nav-auth {
+            display: flex;
+            padding: 0;
+        }
+
+        .navigation ul {
+            list-style: none; 
+        }
+
+        .nav-links {
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .nav-links li, .nav-auth li {
+            margin: 0 10px;
+        }
+
+        .nav-links a, .nav-auth a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .nav-links a:hover, .nav-auth a:hover {
+            background-color: #811010;
+        }
+
+        .logo {
+            width: 50px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 0 10px;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #811010;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .hero h1 {
+            color: #811010;
+        }
+
+        .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .news-item {
+            width: 30%; /* Ajusta el tamaño según sea necesario */
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .news-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .news-content {
+            padding: 15px;
+            background-color: #fff;
+        }
+
+        .news-content h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .news-content p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .events {
+            margin: 20px;
+            overflow: hidden; /* Oculta todo lo que se desborde de este contenedor */
+        }
+
+        .events-carousel {
+            display: flex;
+            overflow-x: auto; /* Permite desplazamiento horizontal */
+            scroll-snap-type: x mandatory; /* Soporta snap scrolling para cada tarjeta */
+        }
+
+        .event-card {
+            flex: 0 0 auto; /* No crece, no se encoge, y mantiene su tamaño automático */
+            width: 300px; /* Ajusta según necesites */
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            border-radius: 10px;
+            overflow: hidden; /* Asegura que nada se desborde del borde redondeado */
+            scroll-snap-align: start; /* Alinea los elementos al comenzar el desplazamiento */
+        }
+
+        .event-card img {
+            width: 100%;
+            height: auto;
+            display: block; /* Elimina cualquier espacio extra debajo de la imagen */
+        }
+
+        .event-info {
+            padding: 10px;
+            background-color: white; /* Fondo para los detalles del evento */
+        }
+
+        .event-info h3, .event-info p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Página de Inicio</h1>
-    <a href="/login">Iniciar sesión</a>
+    <header>
+        <div class="logo-container">
+            <img src="https://sociedadtecnologiaydeontologia.files.wordpress.com/2019/01/logotipo_ipn.png?w=640" alt="Logo de la Institución" class="logo">
+        </div>
+        <nav class="navigation">
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#grades">Calificaciones</a></li>
+                <li><a href="#programs">Trámites</a></li>
+            </ul>
+            <ul class="nav-auth">
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Bienvenido a Nuestro Sistema de Administración Escolar</h1>
+            <p>Accede a todos tus recursos educativos en un solo lugar.</p>
+        </section>
+        <section class="news">
+            <h2>Últimas Noticias</h2>
+            <div class="news-container">
+                <div class="news-item">
+                    <img src="https://www.ipn.mx/assets/files/ccs/img/comunicados/2024/05/prinn-23.jpg" alt="Auroras boreales en México">
+                    <div class="news-content">
+                        <h3>Auroras boreales en México, por intensa actividad solar</h3>
+                        <p>16, May 2024 | Audio</p>
+                        <p>Descripción breve de la noticia...</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="https://www.ipn.mx/assets/files/ccs/img/noticias/2024/05/c-portada.jpeg" alt="Exposición a ondas">
+                    <div class="news-content">
+                        <h3>Exposición a ondas electromagnéticas de celular y WiFi</h3>
+                        <p>12, May 2024</p>
+                        <p>Descripción breve de la noticia...</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="https://www.ipn.mx/assets/files/ccs/img/comunicados/2024/05/prin-21.jpg" alt="Patronato de Obras del IPN">
+                    <div class="news-content">
+                        <h3>Reporta Patronato de Obras del IPN 70% de avance en la construcción de la UPIIP Palenque</h3>
+                        <p>1, May 2024</p>
+                        <p>Descripción breve de la noticia...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="events">
+            <h2>Eventos Próximos</h2>
+            <div class="events-carousel">
+                <div class="event-card">
+                    <img src="https://www.ipn.mx/assets/files/ccs/img/noticias/2024/05/top10-cumplimiento.jpg" alt="Evento 1">
+                    <div class="event-info">
+                        <h3>Declaración Patrimonial y de Intereses</h3>
+                        <p>17, May 2024</p>
+                        <p>Detalles sobre el evento...</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="https://www.ipn.mx/assets/files/main/img/agenda/eventos/2024/04/11k-adultos.jpg" alt="Evento 2">
+                    <div class="event-info">
+                        <h3>IPNONCE K 2024</h3>
+                        <p>18, May 2024</p>
+                        <p>Detalles sobre el evento...</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="https://www.ipn.mx/assets/files/main/img/agenda/eventos/2024/04/conversus-ciencia.jpg" alt="Evento 3">
+                    <div class="event-info">
+                        <h3>Conversus: Los misterios de la ciencia</h3>
+                        <p>20, May 2024</p>
+                        <p>Detalles sobre el evento...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sistema de Administración Escolar. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

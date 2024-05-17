@@ -93,10 +93,10 @@ app.post('/login', async (req, res) => {
             return res.status(401).send('Contraseña incorrecta');
         }
         req.session.user = user;
-        res.redirect('/saes'); // Redirigir a la nueva ruta 'saes' después del inicio de sesión
+        res.redirect('/saes'); 
     } catch (error) {
         console.error('Error al iniciar sesión:', error);
-        res.status(500).send('Error al iniciar sesión');
+        res.status(500).send('Error del servidor al iniciar sesión');
     }
 });
 
