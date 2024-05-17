@@ -26,7 +26,7 @@ mongoose.set('strictQuery', false); // Agrega esta línea para la advertencia de
 // Definir un esquema y modelo para el registro de información
 const userSchema = new mongoose.Schema({
     name: String,
-    email: String,
+    password: String,
 });
 
 const User = mongoose.model('User', userSchema);
@@ -68,9 +68,9 @@ app.get('/register', (req, res) => {
 
 // Ruta POST para manejar el formulario de registro y almacenar los datos
 app.post('/register', async (req, res) => {
-    const { name, email } = req.body;
+    const { name, password } = req.body;
     try {
-        const newUser = new User({ name, email });
+        const newUser = new User({ name, password });
         await newUser.save();
         res.redirect('/home');
     } catch (error) {
