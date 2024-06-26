@@ -45,6 +45,20 @@
             color: #ffffff;
         }
 
+        .logout-button {
+            background-color: #8C001A;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .logout-button:hover {
+            background-color: #700017;
+        }
+
         .perfil-container {
             display: flex;
             flex-direction: column;
@@ -67,6 +81,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            max-width: 200px; /* Reducir tamaño de la imagen */
+            margin-right: 20px;
         }
 
         .student-image img {
@@ -102,6 +118,14 @@
             background-color: #8C001A;
             color: #FFFFFF;
         }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #b92c46d3;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -109,58 +133,31 @@
         <img src="https://sociedadtecnologiaydeontologia.files.wordpress.com/2019/01/logotipo_ipn.png?w=640" alt="Logo de la Institución" class="logo">
         <nav class="bar">
             <a href="#inicio"><b>Inicio</b></a>
-            <a href="#tramites"><b>Tramites</b></a>
-            <a href="#carreras"><b>Carreras</b></a>
         </nav>
+        <form action="/logout" method="POST" style="margin: 0;">
+            <button type="submit" class="logout-button">Cerrar sesión</button>
+        </form>
     </header>
     <div class="perfil-container">
         <div class="user-data">
             <div class="student-image">
-                <img src="https://i.pinimg.com/236x/13/71/c1/1371c163a3d785d5bb4bfd3e8c78b2fb.jpg" alt="Foto del Estudiante">
+                <img src="{{user.imageUrl}}" alt="Foto del Estudiante">
             </div>
             <div class="student-info">
                 <h2>Datos del Alumno</h2>
-                <p><strong>Nombre:</strong> Juan Pérez</p>
-                <p><strong>Boleta:</strong> 0123456789</p>
-                <p><strong>Carrera:</strong> Ingeniería en Inteligencia Artificial</p>
+                <p><strong>Nombre:</strong> {{user.name}}</p>
+                <p><strong>Número de Boleta:</strong> {{user.studentDetails.boleta}}</p>
+                <p><strong>Carrera:</strong> {{user.studentDetails.carrera}}</p>
+                <p><strong>Periodo Escolar:</strong> 2024</p>
             </div>
         </div>
         <div class="grades-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Materia</th>
-                        <th>1er Parcial</th>
-                        <th>2do Parcial</th>
-                        <th>3er Parcial</th>
-                        <th>Calificación Final</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Español</td>
-                        <td>8.5</td>
-                        <td>9.0</td>
-                        <td>9.5</td>
-                        <td>9.0</td>
-                    </tr>
-                    <tr>
-                        <td>Matemáticas</td>
-                        <td>8.5</td>
-                        <td>9.0</td>
-                        <td>9.5</td>
-                        <td>9.0</td>
-                    </tr>
-                    <tr>
-                        <td>Diseño de Sistemas</td>
-                        <td>8.5</td>
-                        <td>9.0</td>
-                        <td>9.5</td>
-                        <td>9.0</td>
-                    </tr>
-                </tbody>
-            </table>
+            <a href="/calificaciones" class="ui button">Ver Calificaciones</a>
         </div>
     </div>
+    <footer class="footer">
+        &copy; {{currentYear}} Instituto Politécnico Nacional
+    </footer>
 </body>
 </html>
+s

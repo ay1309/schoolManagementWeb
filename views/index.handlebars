@@ -99,6 +99,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             border-radius: 8px;
             overflow: hidden;
+            background-color: #fff;
         }
 
         .news-item img {
@@ -109,7 +110,6 @@
 
         .news-content {
             padding: 15px;
-            background-color: #fff;
         }
 
         .news-content h3 {
@@ -141,6 +141,7 @@
             border-radius: 10px;
             overflow: hidden; /* Asegura que nada se desborde del borde redondeado */
             scroll-snap-align: start; /* Alinea los elementos al comenzar el desplazamiento */
+            background-color: #fff;
         }
 
         .event-card img {
@@ -151,7 +152,7 @@
 
         .event-info {
             padding: 10px;
-            background-color: white; /* Fondo para los detalles del evento */
+            background-color: #f3f3f3; /* Fondo para los detalles del evento */
         }
 
         .event-info h3, .event-info p {
@@ -167,11 +168,14 @@
         <nav class="navigation">
             <ul class="nav-links">
                 <li><a href="#home">Inicio</a></li>
-                <li><a href="#grades">Calificaciones</a></li>
-                <li><a href="#programs">Trámites</a></li>
             </ul>
             <ul class="nav-auth">
-                <li><a href="/login">Login</a></li>
+                {{#if user}}
+                    <li><a href="/logout">Cerrar Sesión</a></li>
+                {{else}}
+                    <li><a href="/login">Iniciar Sesión</a></li>
+                    <li><a href="/loginm">Iniciar Sesión como Profesor</a></li> <!-- Nuevo botón -->
+                {{/if}}
             </ul>
         </nav>
     </header>

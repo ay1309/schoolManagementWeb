@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e4bcbca4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #b92c46d3;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        main {
+            width: 50%;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #8C001A;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #700017;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #8C001A;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Encabezado opcional si lo necesitas -->
+    </header>
+    <main>
+        <h1>{{ title }}</h1>
+        <form action="/creargrupo" method="POST">
+            <div>
+                <label for="nombreMateria">Nombre de la Materia:</label>
+                <input type="text" name="nombreMateria" id="nombreMateria" required>
+            </div>
+            <div>
+                <label for="boleta">Número de Boleta del Estudiante:</label>
+                <input type="text" name="boleta" id="boleta" required>
+            </div>
+            <button type="submit">Crear Grupo</button>
+        </form>
+        <a href="/inicioprofesores">Volver</a>
+    </main>
+    <footer>
+        <p>© 2024 Sistema de Administración Escolar. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

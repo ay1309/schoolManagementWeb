@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e4bcbca4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: #b92c46d3;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            padding-left: 20px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-links, .nav-auth {
+            display: flex;
+            padding: 0;
+        }
+
+        .navigation ul {
+            list-style: none; 
+        }
+
+        .nav-links {
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .nav-links li, .nav-auth li {
+            margin: 0 10px;
+        }
+
+        .nav-links a, .nav-auth a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .nav-links a:hover, .nav-auth a:hover {
+            background-color: #811010;
+        }
+
+        .logo {
+            width: 50px;
+        }
+
+        main {
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            background-color: #a51b1b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container a:hover {
+            background-color: #5f0707;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #811010;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://sociedadtecnologiaydeontologia.files.wordpress.com/2019/01/logotipo_ipn.png?w=640" alt="Logo de la Institución" class="logo">
+        </div>
+        <nav class="navigation">
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+            </ul>
+            <ul class="nav-auth">
+                <li><a href="/logout">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Bienvenido al Panel de Control de Profesores</h1>
+        <div class="button-container">
+            <a href="/registrarusuario">Registrar Usuario</a>
+            <a href="/crearGrupo">Crear Grupo</a>
+            <a href="/subirCalificaciones">Subir Calificaciones</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sistema de Administración Escolar. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
